@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-const SearchExercises = () => {
+const SearchExercises = ({ setWorkouts, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
-  const [workouts, setWorkouts] = useState([]);
+
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -63,7 +63,12 @@ const SearchExercises = () => {
         </button>
       </div>
       <div className="relative p-4">
-        <HorizontalScrollbar data={bodyParts} />
+        <HorizontalScrollbar
+          // passing  props to horizontal scroll bar
+          data={bodyParts}
+          bodyPart={bodyPart}
+          setBodyPart={setBodyPart}
+        />
       </div>
     </div>
   );
