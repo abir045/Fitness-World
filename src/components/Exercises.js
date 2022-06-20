@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import Pagination from "./Pagination";
 import WorkoutCard from "./WorkoutCard";
-
+// receiving props from home
 const Exercises = ({ workouts, setWorkouts, bodyPart }) => {
   console.log(workouts);
 
@@ -18,7 +18,30 @@ const Exercises = ({ workouts, setWorkouts, bodyPart }) => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+
+    window.scrollTo({ top: 1800, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const fetchWorkoutData = async () => {
+      let workoutsData = [];
+      if (bodyPart === "all") {
+        workoutsData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises",
+          exerciseOptions
+        );
+      } else {
+        workoutsData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+          exerciseOptions
+        );
+      }
+      setWorkouts(workoutsData);
+    };
+
+    fetchWorkoutData();
+  }, [bodyPart]);
+
   return (
     <div id="exercises">
       <h3 className="mb-5 text-2xl m-2 p-2 mr-4">Showing Results</h3>
@@ -27,6 +50,7 @@ const Exercises = ({ workouts, setWorkouts, bodyPart }) => {
           <WorkoutCard key={index} workout={workout} />
         ))}
       </div>
+
       {/* pagination */}
 
       <div className="mt-4">

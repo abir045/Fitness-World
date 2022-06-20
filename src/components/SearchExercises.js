@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
+// receiving props from home page
 const SearchExercises = ({ setWorkouts, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
 
