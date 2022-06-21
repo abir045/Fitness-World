@@ -3,6 +3,7 @@ import BodyPart from "./BodyPart";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
+import WorkoutCard from "./WorkoutCard";
 
 const LeftArrow = () => {
   // subscribe to visibility context
@@ -24,21 +25,26 @@ const RightArrow = () => {
 };
 
 //  receiving props from SearchExercises component
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
+const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => {
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item) => {
         return (
           <div
+            className="gap-10"
             key={item.id || item}
             itemID={item.id || item}
             title={item.id || item}
           >
-            <BodyPart
-              item={item}
-              bodyPart={bodyPart}
-              setBodyPart={setBodyPart}
-            />
+            {isBodyParts ? (
+              <BodyPart
+                item={item}
+                bodyPart={bodyPart}
+                setBodyPart={setBodyPart}
+              />
+            ) : (
+              <WorkoutCard workout={item} />
+            )}
           </div>
         );
       })}

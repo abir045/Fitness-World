@@ -4,7 +4,7 @@ import Icon from "../assets/icons/gym.png";
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
     <div
-      className="flex flex-col justify-center items-center bg-white gap-10 border-b-4 w-[250px] h-[260px] cursor-pointer "
+      className="flex flex-col justify-center items-center bg-white gap-y-10 border-b-4 w-[250px] h-[260px] cursor-pointer "
       onClick={() => {
         setBodyPart(item);
       }}

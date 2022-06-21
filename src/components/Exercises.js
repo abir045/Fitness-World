@@ -4,6 +4,7 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 import Pagination from "./Pagination";
 import WorkoutCard from "./WorkoutCard";
 // receiving props from home
+
 const Exercises = ({ workouts, setWorkouts, bodyPart }) => {
   console.log(workouts);
 

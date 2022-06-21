@@ -30,6 +30,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
             <li className="flex m-2 p-2">
               {pageNumbers.map((number) => (
                 <a
+                  key={number}
                   className={
                     currentPage === number
                       ? "bg-blue border-red-300 text-red-500 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-bold"
