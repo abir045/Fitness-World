@@ -14,7 +14,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         className="w-[40px] h-[40px]  hover:scale-125 "
         alt="dumbell"
       />
-      <p className="font-bold text-2xl capitalize ">{item}</p>
+      <p className="font-bold text-2xl capitalize">{item}</p>
     </div>
   );
 };

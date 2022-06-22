@@ -1,21 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/icons/gymnast.svg";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-around space-x-10 sm:space-x-32 mt-5 sm:mt-8 px-5">
+    <div className="flex items-center w-full justify-between space-x-5 mt-2 ">
       <Link to="/">
-        <img src={Logo} className="w-[48px] h-[48px]" />
+        <img src={Logo} className="flex justify-start w-[80px] ml-2" />
       </Link>
-      <div className="flex space-x-10 text-2x items-end ">
-        <Link to="/" className="text-[#3a1212] border-b-4   border-red-600">
-          Home{" "}
-        </Link>
 
-        <a href="#exercises" className="text-[#3A1212]">
-          Execises
-        </a>
+      <MenuIcon fontSize="large" className="sm:hidden flex mx-2" />
+
+      <div className="hidden sm:flex sm:justify-end  space-x-5 w-full items-end mr-[5%] p-2 ">
+        <div>
+          <Link
+            to="/"
+            className="flex text-sm border-b-4 p-2 mx-2 border-red-600"
+          >
+            <h3> Home</h3>
+          </Link>
+        </div>
+
+        <div>
+          <a href="#exercises" className="flex text-sm p-3  items-center mr-4">
+            <h3>Execises</h3>
+          </a>
+        </div>
       </div>
     </div>
   );

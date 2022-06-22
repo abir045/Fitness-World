@@ -5,11 +5,11 @@ import Loader from "./Loader";
 const SimilarWorkouts = ({ targetMuscleWorkouts, equipmentWorkouts }) => {
   return (
     <div className="flex flex-col">
-      <p className="mx-4 mb-5 text-3xl">
+      <p className="mx-4 mb-5 text-3xl text-center">
         Workout that target the same muscle group
       </p>
 
-      <div className="flex-col">
+      <div className="flex flex-col">
         {targetMuscleWorkouts.length ? (
           <HorizontalScrollbar data={targetMuscleWorkouts} />
         ) : (
@@ -17,7 +17,9 @@ const SimilarWorkouts = ({ targetMuscleWorkouts, equipmentWorkouts }) => {
         )}
       </div>
       {/* equipment workouts  */}
-      <p className="mx-4 mb-5 text-3xl">Workout that use the same equipment</p>
+      <p className="mx-4 mb-5 text-3xl text-center">
+        Workout that use the same equipment
+      </p>
 
       <div className="flex-col">
         {equipmentWorkouts.length ? (

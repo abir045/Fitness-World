@@ -6,8 +6,6 @@ import WorkoutCard from "./WorkoutCard";
 // receiving props from home
 
 const Exercises = ({ workouts, setWorkouts, bodyPart }) => {
-  console.log(workouts);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 

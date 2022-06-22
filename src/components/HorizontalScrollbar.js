@@ -9,7 +9,7 @@ const LeftArrow = () => {
   // subscribe to visibility context
   const { scrollPrev } = useContext(VisibilityContext);
   return (
-    <p onClick={() => scrollPrev()}>
+    <p className="flex-col cursor-pointer z-99" onClick={() => scrollPrev()}>
       <img src={LeftArrowIcon} alt="left arrow" />
     </p>
   );
@@ -18,7 +18,7 @@ const LeftArrow = () => {
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
   return (
-    <p onClick={() => scrollNext()}>
+    <p className="flex-col cursor-pointer z-99" onClick={() => scrollNext()}>
       <img src={RightArrowIcon} alt="left arrow" />
     </p>
   );

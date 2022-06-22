@@ -33,22 +33,22 @@ const SearchExercises = ({ setWorkouts, bodyPart, setBodyPart }) => {
           exercise.bodyPart.toLowerCase().includes(search)
       );
 
-      setSearch("");
       setWorkouts(searchedWorkouts);
+      setSearch([]);
     }
   };
 
   return (
-    <div className="flex-col items-center justify-center mt-8 ">
-      <h1 className="font-bold text-4xl text-center sm:text-5xl mb-4">
+    <div className="flex flex-col items-center justify-center mt-8 ">
+      <h1 className="font-bold text-xl sm:text-4xl text-center mb-4">
         Awesome workouts you <br /> should know
       </h1>
 
-      <div className="flex flex-row">
-        <label className="flex ">
-          <span className="sr-only">Search</span>
+      <div className="flex flex-col mx-auto sm:flex-row">
+        <label className="flex">
+          <span className="sr-only ">Search</span>
           <input
-            className="w-[350px] h-[56px] sm:w-[600px]  lg:w-[800px] bg-white p-4 ml-6  font-bold block border mb-8  border-slate-300 rounded-md py-2 focus:outline-none focus:border-sky-500"
+            className="w-[200px] text-center h-[56px] sm:w-[600px]  lg:w-[800px] bg-white p-4  font-bold block border mb-4  border-slate-300 rounded-md py-2 focus:outline-none focus:border-sky-500"
             placeholder="Search Exercises"
             type="text"
             name="search"
@@ -57,13 +57,13 @@ const SearchExercises = ({ setWorkouts, bodyPart, setBodyPart }) => {
           />
         </label>
         <button
-          className="items-center w-[120px] h-[56px] sm:w-[150px] bg-red-400 rounded-lg p-4 right-0 sm:text-xl"
+          className="items-center mx-auto w-[120px] h-[56px] sm:w-[150px] bg-red-400 rounded-lg p-4 right-0 sm:text-xl"
           onClick={handleSearch}
         >
           Search
         </button>
       </div>
-      <div className="relative p-4">
+      <div className="w-[400px] mt-3 p-2 sm:w-[600px] md:w-[800px] lg:w-[1000px]">
         <HorizontalScrollbar
           // passing  props to horizontal scroll bar
           data={bodyParts}

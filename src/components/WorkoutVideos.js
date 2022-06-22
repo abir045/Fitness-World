@@ -4,16 +4,19 @@ const WorkoutVideos = ({ workoutVideos, name }) => {
   if (!workoutVideos) return "Loading...";
 
   return (
-    <div className="flex p-10">
-      <h4 className="text-3xl mb-6">
-        Watch <span className="text-[#ff2625] text-3xl capitalize">{name}</span>{" "}
-        workout videos
-      </h4>
-      <div className="flex flex-col justify-start flex-wrap items-center md:flex-row md:gap-[110px]">
+    <div className="flex flex-col p-5 w-full  md:flex-row">
+      <div className="flex-col p-2">
+        <h4 className="text-3xl mb-6 text-center">
+          Watch <span className="text-red-400 text-3xl capitalize">{name}</span>{" "}
+          workout videos
+        </h4>
+      </div>
+
+      <div className="flex flex-col justify-start flex-wrap items-center md:flex-row sm:gap-[100px]">
         {workoutVideos?.slice(0, 6).map((item, index) => {
           return (
             <a
-              className="text-lg"
+              className="flex-col text-lg p-4 sm:flex-row"
               href={`https://youtube.com/watch?v=${item.video.videoId}`}
               target="_blank"
               rel="noreferrer"
